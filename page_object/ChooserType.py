@@ -1,5 +1,3 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
 import re
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -100,7 +98,7 @@ class ChooserType:
         try:  # если данного магазина не знаем, то пишем в лог его id
             return SellerId.seller_id[id_seller]
         except:
-            return id
+            return id_seller
 
 
 
