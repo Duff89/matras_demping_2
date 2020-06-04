@@ -22,8 +22,7 @@ class ChooserType:
     def get_card_page(self, link):
         return self.driver.get(link + '?order=price:desc&town_id=17030')  # сразу выбираем город и сортировку по цене
 
-    def get_attr(self, element):
-        self.element = element
+    def get_attr(self, element):        
         self.name = self.element.find_element_by_css_selector('span[data-bind*=".extended_name"]')
         name = self.name.text
         return name
@@ -32,8 +31,7 @@ class ChooserType:
         #  в некоторых случаях (типа детские матрасы) кнопки "посмотреть все размеры" нет
         try:
             self.element = element
-            see_more = self.element.find_element_by_css_selector('.schema-product__more-control a')
-            see_more.click()
+            self.element.find_element_by_css_selector('.schema-product__more-control a').click()            
         except:
             pass
 
